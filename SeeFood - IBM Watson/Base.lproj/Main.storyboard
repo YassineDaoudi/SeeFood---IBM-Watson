@@ -18,16 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="drp-Ew-UjY">
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Fvf-8K-MO9"/>
+                                    <constraint firstAttribute="height" constant="128" id="v7h-Ap-TOC"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vb9-6a-ARl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJV-pL-cHL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="vRg-Ie-0vM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqd-5n-vva">
+                                <rect key="frame" x="125" y="607" width="124" height="40"/>
+                                <color key="backgroundColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvh-OX-klP"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.53409618139266968" green="0.59629547595977783" blue="0.81492191553115845" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="drp-Ew-UjY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Jv-ND-TxS"/>
+                            <constraint firstItem="Jqd-5n-vva" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="3bO-Ss-cuB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IJV-pL-cHL" secondAttribute="bottom" constant="520" id="5vS-r9-cYi"/>
+                            <constraint firstItem="IJV-pL-cHL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7Ja-KL-Pv0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vb9-6a-ARl" secondAttribute="trailing" id="7ZG-O8-9Dt"/>
                             <constraint firstItem="Vb9-6a-ARl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BxK-L4-JnI"/>
                             <constraint firstItem="Vb9-6a-ARl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V2X-an-6Cz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vb9-6a-ARl" secondAttribute="bottom" id="V5p-jd-n1U"/>
+                            <constraint firstItem="IJV-pL-cHL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vs9-FZ-2RR"/>
+                            <constraint firstItem="drp-Ew-UjY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XjB-ds-AZy"/>
+                            <constraint firstItem="Jqd-5n-vva" firstAttribute="top" secondItem="IJV-pL-cHL" secondAttribute="bottom" constant="460" id="s3f-8R-nzO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jqd-5n-vva" secondAttribute="bottom" constant="20" id="xP2-we-eCG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IJV-pL-cHL" secondAttribute="trailing" id="yjv-GO-SJL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jqd-5n-vva" secondAttribute="trailing" constant="126" id="zW3-Ww-6uP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,12 +79,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="1OS-9A-IVm" id="QOy-ai-hbr"/>
-                        <outlet property="imageView" destination="Vb9-6a-ARl" id="qIB-fw-ZwC"/>
+                        <outlet property="imageView" destination="Vb9-6a-ARl" id="IoV-LP-jNy"/>
+                        <outlet property="shareButton" destination="Jqd-5n-vva" id="fQA-wb-BBr"/>
+                        <outlet property="topBarImageView" destination="IJV-pL-cHL" id="0Ga-Iz-Ndm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-564"/>
+            <point key="canvasLocation" x="1316" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w4T-Qj-3p6">
@@ -55,6 +96,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yOK-fg-C92">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                            <color key="textColor" red="0.97670525312423706" green="0.60546392202377319" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -66,4 +111,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hotdogBackground" width="91.680000305175781" height="68.639999389648438"/>
+    </resources>
 </document>
